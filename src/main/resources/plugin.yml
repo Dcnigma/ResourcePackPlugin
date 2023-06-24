@@ -1,33 +1,64 @@
+#
+#__________                                                 .__                    .___
+#\______   \ ____   __________  __ _________   ____  ____   |  |   _________     __| _/___________
+# |       _// __ \ /  ___/  _ \|  |  \_  __ \_/ ___\/ __ \  |  |  /  _ \__  \   / __ |/ __ \_  __ \
+# |    |   \  ___/ \___ (  <_> )  |  /|  | \/\  \__\  ___/  |  |_(  <_> ) __ \_/ /_/ \  ___/|  | \/
+# |____|_  /\___  >____  >____/|____/ |__|    \___  >___  > |____/\____(____  /\____ |\___  >__|
+#        \/     \/     \/                         \/    \/                  \/      \/    \/
+#
+#  By Dcnigma v1.0 Snapshot!
+#
+# only the
+#         resource-pack-urls can be changed
+#   Usage cant be changed for now!
+#
 name: ResourcePackPlugin
-version: 1.0
+version: 1.0.0
 main: com.example.resourcepackplugin.ResourcePackPlugin
-description: A plugin that loads custom resource packs.
+api-version: 1.17
+author: Dcnigma
+description: Simple ResourcePack Loader
+
 commands:
   loadpack1:
     description: Load Blocktopolis Texture Pack 1
     usage: /loadpack1
-    permission: resourcepack.load1
+    permission: default
+#         resource-pack-urls and permission can be changed
+# Usage cant be changed for now
     resource-pack-urls:
-      - "https://blocktopolis.redirectme.net/uploads/Blocktopolis.zip"
+      - "https://example.com"
   loadpack2:
     description: Load Redbull Resource Pack!
     usage: /loadpack2
-    permission: resourcepack.load2
+    permission: default
+#         resource-pack-urls and permission can be changed
+# Usage cant be changed for now
     resource-pack-urls:
-      - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+      - "https://example.com"
   loadpack3:
-    description: Load VanillaBDcraft resource pack!
+    description: Load Blocktopolis Texture Pack 1
     usage: /loadpack3
-    permission: resourcepack.load2
+    permission: default
+#         resource-pack-urls and permission can be changed
+# Usage cant be changed for now
     resource-pack-urls:
-      - "https://blocktopolis.redirectme.net/uploads/VanillaBDcraft120.zip"
+      - "https://example.com"
   loadpack4:
-    description: Load resource pack 4
+    description: Load Redbull Resource Pack!
     usage: /loadpack4
-    permission: resourcepack.load2
+    permission: default
     resource-pack-urls:
-      - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+      - "https://example.com"
+  loadpack5:
+    description: Load Redbull Resource Pack!
+    usage: /loadpack5
+    permission: default
+#         resource-pack-urls and permission can be changed
+# Usage cant be changed for now
+    resource-pack-urls:
+      - "https://example.com"
   ResourcePackPlugin:
     description: Reload plugin configuration
     usage: /ResourcePackPlugin reload
-    permission: resourcepack.reload
+    permission: default
