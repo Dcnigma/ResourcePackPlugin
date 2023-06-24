@@ -1,8 +1,10 @@
 package com.example.resourcepackplugin;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,7 +18,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 
 public class ResourcePackPlugin extends JavaPlugin implements CommandExecutor {
@@ -26,14 +27,14 @@ public class ResourcePackPlugin extends JavaPlugin implements CommandExecutor {
     @Override
     public void onEnable() {
         createPluginYml();
-
-        // Register the commands
         registerCommands();
     }
 
     private void createPluginYml() {
-        File folder = new File(getDataFolder(), "ResourcePackPlugin");
-        folder.mkdirs();
+        File folder = getDataFolder();
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
 
         File pluginYmlFile = new File(folder, "plugin.yml");
 
@@ -48,27 +49,54 @@ public class ResourcePackPlugin extends JavaPlugin implements CommandExecutor {
 
         // Load the plugin.yml file into memory
         pluginConfig = YamlConfiguration.loadConfiguration(pluginYmlFile);
-    }
 
+        File commandsFile = new File(folder, "commands.yml");
+
+        if (!commandsFile.exists()) {
+            try (InputStream inputStream = getResource("commands.yml");
+                 FileOutputStream outputStream = new FileOutputStream(commandsFile)) {
+                Files.copy(inputStream, commandsFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
+                getLogger().log(Level.SEVERE, "Failed to create commands.yml", e);
+            }
+        }
+    }
     private void registerCommands() {
-        ConfigurationSection commandsSection = pluginConfig.getConfigurationSection("commands");
+    File commandsFile = new File(getDataFolder(), "commands.yml");
+    if (commandsFile.exists()) {
+        YamlConfiguration commandsConfig = YamlConfiguration.loadConfiguration(commandsFile);
+        ConfigurationSection commandsSection = commandsConfig.getConfigurationSection("commands");
         if (commandsSection != null) {
-            // Iterate over the commands
             for (String commandName : commandsSection.getKeys(false)) {
                 ConfigurationSection commandSection = commandsSection.getConfigurationSection(commandName);
                 if (commandSection != null) {
-                    List<String> resourcePackUrls = commandSection.getStringList("resource-pack-urls");
-                    if (!resourcePackUrls.isEmpty()) {
-                        // Register the command executor for each command
-                        getCommand(commandName).setExecutor(this);
+                    PluginCommand pluginCommand = getCommand(commandName);
+                    if (pluginCommand != null) {
+                        pluginCommand.setExecutor(this);
+
+                        // Set command description and usage
+                        String description = commandSection.getString("description");
+                        String usage = commandSection.getString("usage");
+                        pluginCommand.setDescription(description);
+                        pluginCommand.setUsage(usage);
+
+                        // Set command permission
+                        String permission = commandSection.getString("permission");
+                        pluginCommand.setPermission(permission);
                     }
                 }
             }
         }
     }
+}
+
+
 
     private void reloadPluginYml() {
-        File folder = new File(getDataFolder(), "ResourcePackPlugin");
+        File folder = getDataFolder();
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
         File pluginYmlFile = new File(folder, "plugin.yml");
 
         // Reload the plugin.yml file
@@ -90,22 +118,28 @@ public class ResourcePackPlugin extends JavaPlugin implements CommandExecutor {
             }
         }
 
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
-            ConfigurationSection commandSection = pluginConfig.getConfigurationSection("commands." + label);
-            if (commandSection != null) {
-                List<String> resourcePackUrls = commandSection.getStringList("resource-pack-urls");
-                if (!resourcePackUrls.isEmpty()) {
-                    for (String resourcePackUrl : resourcePackUrls) {
+        String commandName = command.getName(); // Retrieve the actual command name
+        ConfigurationSection commandSection = pluginConfig.getConfigurationSection("commands." + commandName);
+        if (commandSection != null) {
+            List<String> resourcePackUrls = commandSection.getStringList("resource-pack-urls");
+            if (!resourcePackUrls.isEmpty()) {
+                for (String resourcePackUrl : resourcePackUrls) {
+                    if (sender instanceof Player) {
+                        Player player = (Player) sender;
                         player.setResourcePack(resourcePackUrl);
-                        player.sendMessage("Resource pack loading: " + resourcePackUrl);
+                        player.sendMessage(ChatColor.GREEN + "Resource pack loading: " + resourcePackUrl);
+                    } else {
+                        sender.sendMessage("This command can only be executed by a player.");
                     }
-                    return true;
-                } else {
-                    player.sendMessage("Resource pack URLs are not specified for this command.");
                 }
+                return true;
+            } else {
+                sender.sendMessage("Resource pack URLs are not specified for this command.");
             }
         }
-        return false;
-    }
-}
+        // Existing code...
+
+            return false;
+        }
+
+        }
