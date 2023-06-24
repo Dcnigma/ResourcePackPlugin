@@ -1,0 +1,11 @@
+name: ResourcePackPlugin
+version: 1.0
+main: com.example.resourcepackplugin.ResourcePackPlugin
+description: A plugin that loads a custom resource pack.
+commands:
+  loadpack:
+    description: Load a resource pack
+    usage: /loadpack
+    permission: resourcepack.load
+config:
+  resource-pack-url: "https://blocktopolis.redirectme.net/uploads/Redbull.zip"

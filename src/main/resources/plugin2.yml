@@ -1,0 +1,6 @@
+name: ResourcePackPlugin
+main: com.example.resourcepackplugin.ResourcePackPlugin
+version: 1.0-SNAPSHOT
+api-version: '1.20'
+author: Dcnigma
+description: Just a plugin to load a Custom Resource Pack!

@@ -1,0 +1,3 @@
+name: ResourcePackPlugin
+version: 1.0
+main: com.example.resourcepackplugin.ResourcePackPlugin
