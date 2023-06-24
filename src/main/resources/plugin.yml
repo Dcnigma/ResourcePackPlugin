@@ -1,0 +1,33 @@
+name: ResourcePackPlugin
+version: 1.0
+main: com.example.resourcepackplugin.ResourcePackPlugin
+description: A plugin that loads custom resource packs.
+commands:
+  loadpack1:
+    description: Load Blocktopolis Texture Pack 1
+    usage: /loadpack1
+    permission: resourcepack.load1
+    resource-pack-urls:
+      - "https://blocktopolis.redirectme.net/uploads/Blocktopolis.zip"
+  loadpack2:
+    description: Load Redbull Resource Pack!
+    usage: /loadpack2
+    permission: resourcepack.load2
+    resource-pack-urls:
+      - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+  loadpack3:
+    description: Load VanillaBDcraft resource pack!
+    usage: /loadpack3
+    permission: resourcepack.load2
+    resource-pack-urls:
+      - "https://blocktopolis.redirectme.net/uploads/VanillaBDcraft120.zip"
+  loadpack4:
+    description: Load resource pack 4
+    usage: /loadpack4
+    permission: resourcepack.load2
+    resource-pack-urls:
+      - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+  ResourcePackPlugin:
+    description: Reload plugin configuration
+    usage: /ResourcePackPlugin reload
+    permission: resourcepack.reload
