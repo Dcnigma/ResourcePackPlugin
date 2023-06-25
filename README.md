@@ -41,7 +41,7 @@ Example:
 
     usage: /loadpack1
 
-    permission: default
+    permission: group.default
 
     resource-pack-urls:
 
