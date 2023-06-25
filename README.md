@@ -5,7 +5,7 @@ My first Minecraft plugin!  So its not the best haha!
 
 You can use these commands "/loadpack1" to "/loadpack5"
 
-So you have 5 commands to load your resources packss.
+So you have 5 commands to load your resources packs.
 You can use this command with a event or commandblock to load the resource pack at any time you like.
 Set permisions for members or specials groups.
 
