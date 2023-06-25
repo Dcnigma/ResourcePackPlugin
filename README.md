@@ -55,5 +55,13 @@ The only thing you can change are the permission and resource-pack-urls,
 The Description is optional is not used at this moment
 </div>
 
+Demo Shop Selling Redbull:
+<div align="center">
+  <img src="https://github.com/Dcnigma/ResourcePackPlugin/blob/main/Screenshot/shopkeerpers.png?raw=true" alt="Shopkeerpers" height="300" />
+ </div>
 
-Cheers!
+
+<div align="center">
+  <img src="https://github.com/Dcnigma/ResourcePackPlugin/blob/main/Screenshot/redbull.png?raw=true" alt="RedBullcan"/>
+ 
+Cheers!</div>
