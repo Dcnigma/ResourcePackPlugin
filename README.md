@@ -12,9 +12,21 @@ I don't like that so I added some AutoBan feature in my ResourcePack Plugin.
 
 The plugin will check if the player logs in correct to the default world (config.xml), if player moves and after 20 ticks it will reset the count.
 If there are more then 3 Disconnects they get autobanned.
+<div align="center"><img src="https://raw.githubusercontent.com/Dcnigma/ResourcePackPlugin/2d9f88ef078a6f17545c4a5c3228c3a0903fdd11/Screenshot/banned.png" alt="startup" height="340"/></div>
+ <div align="left"> 
+  
+Demo:
+
+[![Watch the video](https://img.youtube.com/vi/RTJpwH9Wc5M/default.jpg)](https://youtu.be/RTJpwH9Wc5M)
 
 Still testing it, but it looks like it works like needed.
-Will update README.md later 
+I added a new command:/bannedips
+
+<div align="center"><img src="https://raw.githubusercontent.com/Dcnigma/ResourcePackPlugin/2d9f88ef078a6f17545c4a5c3228c3a0903fdd11/Screenshot/bannedip.png" alt="startup" height="340"/></div>
+
+and made a help function:
+
+<div align="center"><img src="https://raw.githubusercontent.com/Dcnigma/ResourcePackPlugin/2d9f88ef078a6f17545c4a5c3228c3a0903fdd11/Screenshot/help.png" alt="startup" height="340"/></div>
 
 This is my first Minecraft plugin!  
 
