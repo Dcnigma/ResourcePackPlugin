@@ -15,9 +15,11 @@ If there are more then 3 Disconnects they get autobanned.
 <div align="center"><img src="https://raw.githubusercontent.com/Dcnigma/ResourcePackPlugin/2d9f88ef078a6f17545c4a5c3228c3a0903fdd11/Screenshot/banned.png" alt="startup" height="340"/></div>
  <div align="left"> 
   
-Demo:
-
-[![Watch the video](https://img.youtube.com/vi/RTJpwH9Wc5M/default.jpg)](https://youtu.be/RTJpwH9Wc5M)
+<div align="center">
+ 
+ [![DEMO](https://img.youtube.com/vi/RTJpwH9Wc5M/default.jpg)](https://youtu.be/RTJpwH9Wc5M) 
+ 
+ <div align="left"> 
 
 Still testing it, but it looks like it works like needed.
 I added a new command:/bannedips
