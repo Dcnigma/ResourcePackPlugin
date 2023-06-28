@@ -1,11 +1,28 @@
-# ResourcePackPlugin
+# ResourcePackPlugin + AutoBan!
 Just a simple Minecraft plugin to load a resource packs.
+And ban Minecraft server scanners.
 
-My first Minecraft plugin!  So its not the best haha!
+I want to fight back against those logins and disconnect bots that visit my server.
+Thats why i added AutoBan, didn't want to write another plugin. 
 
-You can use this command with a event or (I Think, Untested) Commandblock to load the resource pack at any time you like.
 
-Set permisions for members or specials groups.
+If I look in my server log I see a few of these info messages:
+[INFO]: com.mojang.authlib.GameProfile@1ce0b5ed[id=<null>,name=xxx,properties={},legacy=false] (/x.x.x.x:50412) lost connection: Disconnected
+I don't like that so I added some AutoBan feature in my ResourcePack Plugin.
+
+The plugin will check if the player logs in correct to the default world (config.xml), if player moves and after 20 ticks it will reset the count.
+If there are more then 3 Disconnects they get autobanned.
+
+Still testing it, but it looks like it works like needed.
+Will update README.md later 
+
+This is my first Minecraft plugin!  
+
+So its not the best haha!
+
+You can use the /loadpack commands with a event or (I Think, Untested) Commandblock to load the resource pack at any time you like.
+
+Set permisions for members or specials groups: group.default | is default
 
 You can use these commands "/loadpack1" to "/loadpack5"
 
