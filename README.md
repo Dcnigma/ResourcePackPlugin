@@ -22,14 +22,18 @@ If there are more then 3 Disconnects they get autobanned.
  
  <div align="left"> 
 
-Still testing it, but it looks like it works like needed.
+Still testing it, but it so far it works.
+
 I added a new command:/bannedips
 
 <div align="center"><img src="https://raw.githubusercontent.com/Dcnigma/ResourcePackPlugin/2d9f88ef078a6f17545c4a5c3228c3a0903fdd11/Screenshot/bannedip.png" alt="startup" height="340"/></div>
 
-and made a help function:
+
+and made a help function: /rpp help
 
 <div align="center"><img src="https://raw.githubusercontent.com/Dcnigma/ResourcePackPlugin/2d9f88ef078a6f17545c4a5c3228c3a0903fdd11/Screenshot/help.png" alt="startup" height="340"/></div>
+
+
 
 This is my first Minecraft plugin!  
 
