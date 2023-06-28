@@ -9,11 +9,57 @@
 #  By Dcnigma v1.0 Snapshot!
 #
 # Commands cant be changed for now.
-#
+# So there is no need to edit this page everything gets done in plugin.yml
 commands:
+  ResourcePackPlugin:
+    description: Main command for the ResourcePackPlugin
+    usage: /ResourcePackPlugin [reload]
+    aliases:
+    - rpp
+    - resourcepackplugin
+
+  ResourcePackPluginHelp:
+    description: Display help for the ResourcePackPlugin
+    usage: /ResourcePackPluginHelp
+    aliases:
+    - rpphelp
+    - resourcepackpluginhelp
+
   loadpack1:
+    description: Load Blocktopolis Texture Pack 1
+    usage: /loadpack1
+    aliases:
+    - loadpack1
+
   loadpack2:
+    description: Load Blocktopolis Resource Pack!
+    usage: /loadpack2
+    aliases:
+    - loadpack2
+
   loadpack3:
+    description: Load Blocktopolis Texture Pack 1
+    usage: /loadpack3
+    aliases:
+    - loadpack3
+
   loadpack4:
+    description: Load Redbull Resource Pack!
+    usage: /loadpack4
+    aliases:
+    - loadpack4
+
   loadpack5:
-ResourcePackPlugin:
+    description: Load Redbull Resource Pack!
+    usage: /loadpack5
+    aliases:
+    - loadpack5
+
+  autoban:
+    description: Reload the Autoban configuration
+    usage: /autoban
+    maxDisconnects: 10
+    maxLostConnections: 3
+    worldName: Blocktopolis
+    aliases:
+    - AutoBan

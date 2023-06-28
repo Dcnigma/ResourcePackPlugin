@@ -10,55 +10,88 @@
 #
 # only the
 #         resource-pack-urls can be changed
-#   Usage cant be changed for now!
+#   Usage cant be changed!
 #
 name: ResourcePackPlugin
 version: 1.0.0
-main: com.example.resourcepackplugin.ResourcePackPlugin
-api-version: 1.17
+main: com.dcnigma.resourcepackplugin.ResourcePackPlugin
+api-version: 1.19
 author: Dcnigma
 description: Simple ResourcePack Loader
 
+
 commands:
+  ResourcePackPlugin:
+    description: Main command for the ResourcePackPlugin
+    usage: /ResourcePackPlugin [reload]
+    aliases:
+    - rpp
+    - resourcepackplugin
+    permission: resourcepackplugin.use
+
+  autoban:
+    description: Reload the Autoban configuration
+    usage: /autoban
+    maxDisconnects: 10
+    maxLostConnections: 3
+    worldName: Blocktopolis
+    aliases:
+    - AutoBan
+
+  bannedips:
+    description: List all banned IPs
+    usage: /bannedips
+
+  ResourcePackPluginHelp:
+    description: Display help for the ResourcePackPlugin
+    usage: /ResourcePackPluginHelp
+    aliases:
+    - rpphelp
+    - resourcepackpluginhelp
+    permission: resourcepackplugin.use
+
   loadpack1:
     description: Load Blocktopolis Texture Pack 1
     usage: /loadpack1
-    permission: default
-#         resource-pack-urls and permission can be changed
-# Usage cant be changed for now
-    resource-pack-urls:
-      - "https://example.com"
+    aliases:
+    - loadpack1
+    permission: group.default
+    resourcePackUrls:
+    - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+    - "https://blocktopolis.redirectme.net/uploads/VanillaBDcraft120.zip"
+
   loadpack2:
-    description: Load Redbull Resource Pack!
+    description: Load Blocktopolis Resource Pack!
     usage: /loadpack2
-    permission: default
-#         resource-pack-urls and permission can be changed
-# Usage cant be changed for now
-    resource-pack-urls:
-      - "https://example.com"
+    aliases:
+    - loadpack2
+    permission: group.default
+    resourcePackUrls:
+    - "https://blocktopolis.redirectme.net/uploads/Blocktopolis.zip"
+
   loadpack3:
     description: Load Blocktopolis Texture Pack 1
     usage: /loadpack3
-    permission: default
-#         resource-pack-urls and permission can be changed
-# Usage cant be changed for now
-    resource-pack-urls:
-      - "https://example.com"
+    aliases:
+    - loadpack3
+    permission: group.default
+    resourcePackUrls:
+    - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+
   loadpack4:
     description: Load Redbull Resource Pack!
     usage: /loadpack4
-    permission: default
-    resource-pack-urls:
-      - "https://example.com"
+    aliases:
+    - loadpack4
+    permission: group.default
+    resourcePackUrls:
+    - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
+
   loadpack5:
     description: Load Redbull Resource Pack!
     usage: /loadpack5
-    permission: default
-#         resource-pack-urls and permission can be changed
-# Usage cant be changed for now
-    resource-pack-urls:
-      - "https://example.com"
-  ResourcePackPlugin:
-    description: Reload plugin configuration
-    usage: /ResourcePackPlugin reload
-    permission: default
+    aliases:
+    - loadpack5
+    permission: group.default
+    resourcePackUrls:
+    - "https://blocktopolis.redirectme.net/uploads/Redbull.zip"
